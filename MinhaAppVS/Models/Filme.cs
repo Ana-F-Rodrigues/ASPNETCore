@@ -1,7 +1,6 @@
 ﻿
-using System;
+
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MinhaDemoMVC.Models
 {
@@ -17,7 +16,7 @@ namespace MinhaDemoMVC.Models
         [DataType(DataType.DateTime, ErrorMessage = "Data em formato incorreto")]
         [Required(ErrorMessage = "O campo Data de Lancamento é obrigatorio")]
         [Display(Name = "Data de Lançamento")]
-        public DateTime DataLancamento { get; set; }
+        public System.DateTime DataLancamento { get; set; }
 
         [StringLength(30,ErrorMessage = "Maximo de 30 caracteres")]
         [Required(ErrorMessage = "Genero é obrigatorio")]
@@ -25,7 +24,7 @@ namespace MinhaDemoMVC.Models
 
         [Range(1,1000, ErrorMessage = "Valor de 1 a 1000")]
         [Required(ErrorMessage = "Preencha o campo Valor")]
-        [Column(TypeName = "decimal(18,2)")]
+        [System.ComponentModel.DataAnnotations.Schema.Column(TypeName = "decimal(18,2)")]
         public decimal Valor { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Avaliação")]
